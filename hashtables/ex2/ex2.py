@@ -23,5 +23,6 @@ def reconstruct_trip(tickets, length):
         next_trip = trip[next_trip]
 
     route.append('NONE')
+    print(trip)
 
     return route
