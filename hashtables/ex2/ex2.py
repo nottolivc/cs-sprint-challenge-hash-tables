@@ -12,7 +12,7 @@ def reconstruct_trip(tickets, length):
     # Your code here
     trip = {}
     route = []
-
+    # Loop through tickets setting ticket source to destination and next loc to none
     for ticket in tickets:
         trip[ticket.source] = ticket.destination
     
@@ -26,3 +26,16 @@ def reconstruct_trip(tickets, length):
     print(trip)
 
     return route
+
+    # cache = {}
+    # route = [None] * length
+    # for i in range(length):
+    #     if tickets[i].source == "NONE":
+    #         route[0] = tickets[i].destination
+    #     if tickets[i].source not in cache:
+    #         cache[tickets[i].source] = tickets[i].destination
+    # for j in range(length):
+    #     if route[j-1] is not None:
+    #         route[j] = cache[route[j-1]]
+    # return route
+    # print(reconstruct_trip(tickets,length))
