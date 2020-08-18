@@ -4,7 +4,19 @@ def intersection(arrays):
     """
     # Your code here
 
-    return result
+    cache = {}
+    intersections = []
+
+    for array in arrays:
+        for value in array:
+            # if value in cache and not in results add tvalue
+            if value in cache and value not in intersections:
+                intersections.append(value)
+            else:
+                cache[value] = True
+    print(intersections)
+    
+    return intersections
 
 
 if __name__ == "__main__":
